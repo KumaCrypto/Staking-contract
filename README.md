@@ -6,5 +6,6 @@
     Staking contract has limit: 50_000_000 tokens (it's a max value, which contract can send)
     Rate: 20% from your LP staking balance per every 10 min
     Tokens blocked on 20 min
+    The repository has token files added only for unit tests
 
     Первичная наипростейшая вариация стейкинга, есть недоработки.
