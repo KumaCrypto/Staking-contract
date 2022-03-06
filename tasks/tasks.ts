@@ -1,10 +1,8 @@
-/* eslint-disable node/no-unpublished-import */
-/* eslint-disable prettier/prettier */
 import { task } from "hardhat/config";
 import hre from "hardhat";
 const ethers = hre.ethers;
 
-const contractAddress = "0x75291d181036360fd67E7c9467bf1367A586ae68"; // change
+const contractAddress = "0x75291d181036360fd67E7c9467bf1367A586ae68";
 
 task("Stake", "Stake your LP's & get reward in native tokens")
   .addParam("amount", "How much do you want to stake")
