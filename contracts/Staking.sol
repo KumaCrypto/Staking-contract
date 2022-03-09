@@ -44,7 +44,7 @@ contract StakingLP is AccessControl {
     }
     
     modifier updateReward(address account) {
-        _rewards[account] = earned(account);
+        _rewards[account] += earned(account);
         _;
     }
 
@@ -53,7 +53,7 @@ contract StakingLP is AccessControl {
         return ((lastUpdatedTime - _stakingStartedTime[account]) / 600 * rate);
     }
 
-    function stake(uint _amount) external amountNotA0(_amount) {
+    function stake(uint _amount) external amountNotA0(_amount) updateReward(msg.sender) {
         stakingToken.transferFrom(msg.sender, address(this), _amount);
         _totalSupply += _amount;
         _balances[msg.sender] += _amount;
