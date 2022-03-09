@@ -50,7 +50,7 @@ contract StakingLP is AccessControl {
 
     function earned(address account) public view returns (uint) {
         uint rate = _balances[account] / 100 * interestRate;
-        return ((lastUpdatedTime - _stakingStartedTime[account]) / 600 * rate);
+        return ((lastUpdatedTime - _stakingStartedTime[account]) / (600 * rate));
     }
 
     function stake(uint _amount) external amountNotA0(_amount) {
